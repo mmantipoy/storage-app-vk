@@ -20,7 +20,7 @@
 .card{
 
     &-wrapper{
-        max-width: 600px;
+        max-width: 500px;
         width: 100%;
         padding: 20px;
         @include flex-display(row, space-between, center, 4px, wrap);
