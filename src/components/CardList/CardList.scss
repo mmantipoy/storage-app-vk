@@ -1,0 +1,45 @@
+@import '../../styles/mixins.scss';
+
+.container {
+    display: flex;
+}
+  
+.column {
+    height: auto; 
+
+    &-left{
+        flex: 3;
+        @include flex-display(column, center, center, 12px, nowrap);
+    }
+
+    &-right{
+        flex: 1;
+    }
+}   
+
+.card{
+
+    &-wrapper{
+        max-width: 600px;
+        width: 100%;
+        padding: 20px;
+        @include flex-display(row, space-between, center, 4px, wrap);
+    }
+
+    &-data{
+
+        @include flex-display(column, center, flex-end, 4px, wrap);
+
+    }
+
+    &-row{
+
+        @include flex-display(row, center, center, 8px, wrap);
+
+    }
+}
+
+.header{
+    padding: 20px;
+    @include flex-display(row, space-between, center, 4px, wrap);
+}
