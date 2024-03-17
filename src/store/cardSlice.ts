@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface CounterState {
+interface CardState {
   value: ApiResponse;
 }
 
@@ -25,7 +25,7 @@ interface ApiResponse {
   totalQuantity: number;
 }
 
-const initialState: CounterState = {
+const initialState: CardState = {
   value: {
     id: 0,
     products: [],
@@ -38,7 +38,7 @@ const initialState: CounterState = {
 };
 
 const cardSlice = createSlice({
-  name: 'counter',
+  name: 'card',
   initialState,
   reducers: {
     setData(state, value){

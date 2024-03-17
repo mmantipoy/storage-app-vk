@@ -10,6 +10,7 @@ import {
 } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import CardList from './components/CardList/CardList';
+import React from 'react';
 
 const App = () => {
   const platform = usePlatform();

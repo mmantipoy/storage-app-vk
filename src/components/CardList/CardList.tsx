@@ -5,9 +5,10 @@ import { Product, setData, updateProductQuantity, deleteProduct } from '../../st
 import './CardList.scss'
 import { Avatar, Button, Card } from '@vkontakte/vkui';
 import { getCardData } from '../../api/card/getCard';
+import React from 'react';
 
 const CardList = (): JSX.Element => {
-  const card = useSelector((state: RootState) => state.counter.value);
+  const card = useSelector((state: RootState) => state.card.value);
   const dispatch = useDispatch();
 
     useEffect(() => {
