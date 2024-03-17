@@ -6,6 +6,7 @@ import './CardList.scss'
 import { Avatar, Button, Card } from '@vkontakte/vkui';
 import { getCardData } from '../../api/card/getCard';
 import React from 'react';
+import textData from '../../static/cardList.json'
 
 const CardList = (): JSX.Element => {
   const card = useSelector((state: RootState) => state.card.value);
@@ -25,11 +26,12 @@ const CardList = (): JSX.Element => {
         dispatch(setData(data.carts[0]));
     }
 
+    const text = textData.text.cardList;
   return (
     <div>
     <div className='header'>
-        <h2>Ваша корзина</h2>
-      <Button onClick={updateList}>Запросить новые данные</Button>
+        <h2>{text.header_text}</h2>
+      <Button onClick={updateList}>{text.refetch}</Button>
     </div>
       
       <div>
@@ -43,8 +45,8 @@ const CardList = (): JSX.Element => {
                         <div className='card-data'>
                             <p>{val.title}</p>
                             <div className='card-row'>
-                                <p>{'Скидка - '}{val.discountPercentage}</p> {' | '}
-                                <p>{'Стоимость для вас - '}{val.price}</p>
+                                <p>{`${text.discount} - `}{val.discountPercentage}</p> {' | '}
+                                <p>{`${text.priceForYou} - `}{val.price}</p>
                             </div>
                             <div className='card-row'>
                                 <Button 
@@ -69,11 +71,11 @@ const CardList = (): JSX.Element => {
                     </Card>
                 </>)}
 
-                {card.products.length == 0 ? <p>Ваша корзина пуста, попробуйте перезапросить данные</p> : <></>}
+                {card.products.length == 0 ? <p>{text.noGoods}</p> : <></>}
 
             </div>
             <div className="column column-right">
-                <p>{'Итого: '}{card.total} {' руб.'}</p>
+                <p>{`${text.sum}: `}{card.total} {` ${text.rub}`}</p>
             </div>
         </div>
       </div>

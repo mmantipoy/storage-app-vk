@@ -1,0 +1,14 @@
+{
+    "text": {
+        
+        "cardList":{
+            "header_text": "Ваша корзина",
+            "refetch": "Запросить новые данные",
+            "discount": "Скидка",
+            "priceForYou": "Стоимость для вас",
+            "noGoods": "priceForYou",
+            "sum": "Итого",
+            "rub": "руб."
+        }
+    }
+}
